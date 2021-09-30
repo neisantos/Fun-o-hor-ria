@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
+	int main (){
+				printf("");
+				printf("");
+				printf("\n  ********************************************************************************");
+				printf("\n        UNIR - UNIVERSIDADE FEDERAL DE RONDONIA");				
+				printf("\n        PROJETO PALOMAKOBA - FUNDAPE/UNIR/FLEXTRONICS/MOTOROLA");
+				printf("\n        Depart. Academico de Ciencia da Computacao (DACC)");
+				printf("\n        Nucleo de Tecnologia (NT)");
+				printf("\n 	Profs.: Vicente Eduardo Ribeiro Marcal, DSc");
+				printf("\n 	Aluno: Francisnei Ferreira dos Santos");
+				printf("\n  ********************************************************************************");
+						
+		 	int opcao;
+		 	float  Vo=0, V=0, To=0,So=0, S=0,A=0,Ve=0,T=0;
+		 	float Eq_torri = 0;
+		 	int op = 0;
+ 	
+ 		do {
+ 			
+			printf ("\n 0 - veloc_escalar\n 1 - func horaria de veloc\n 2 - func horaria de pos(aceleracao)\n 3 - funcao desloc/distancia \n 4 - Eq_Torriceli\n");
+ 			printf ("\n digite sua opcao :");
+			scanf ("%i", &op);
+ 				if (op==0){
+ 					printf("\n Calculo da  velocidade escalar:\n"); 
+					printf("");					;
+	 				printf ("\n digite a distancia final em Km:");
+					scanf ("%f",&S);				    
+					printf ("\n digite o tempo em horas:");
+					scanf ("%f",&T); 
+					printf ("\n a velocidade em m/s = %0.2f ",( S / T )/3.6), printf ("\n a velocidade em km/h = %0.2f\n",(S / T)); 
+					scanf ("%f",&Ve);
+					
+				}
+				
+ 				else if (op==1){
+	 				printf ("\n digite a velocidade inicial:");
+					scanf ("%f",&Vo);    
+					printf ("\n digite a aceleracao:");
+					scanf ("%f",& A);    
+					printf ("\n digite o tempo:");
+					scanf ("%f",&T); 
+					printf ("\n a velocidade em m/s será: %0.2f", (Vo + A*T)); 
+					scanf ("%f",&V);		
+			 	}
+			 	else if (op ==2){
+			 		
+					printf ("\n digite a velocidade final:");
+					scanf ("%f",&V); 
+					printf ("\n digite a velocidade inicial:");
+					scanf ("%f",&Vo);					   
+					printf ("\n digite tempo inicial:");
+					scanf ("%f",& To);    
+					printf ("\n digite o tempo final:");
+					scanf ("%f",&T); 
+					printf ("\n a aceleracao  em m/s sera: %0.2f",(V - Vo /(3.6) / (T - To)));
+					scanf ("%f",&A);							
+						}			 				 		
+				 				 	
+				else if (op==3){
+					
+					printf ("\n digite a velocidade inicial:");
+					scanf ("%f",& Vo);
+					printf ("\n digite tempo final :");
+					scanf ("%f",& T);  
+					printf ("\n digite a aceleracao:");
+					scanf ("%f",& A); 					 
+					printf ("\n o deslocamento/distancia sera: %0.2f",(Vo/(3.6) * T + A*(T*T) / 2));
+					scanf ("%f", &S);		
+					}
+					else if (op==4){
+						printf ("\n digite a velocidade inicial:");
+						scanf ("%f",& Vo);		 
+						printf ("\n digite a velocidade final :");
+						scanf ("%f",&V);
+						printf ("\n digite a aceleracao:");
+						scanf ("%f",& A); 
+						printf ("\n digite  o espaco final: ");
+						scanf ("%f",S);
+						printf ("\n digite  o espaco inicial: ");
+						scanf ("%f",So);																		
+						printf ("\n Equacao de Torriceli: %0.2f",((V*V) == (Vo/(3.6*Vo/(3.6))+ 2*A * (S-So))));
+						scanf ("%f", & Eq_torri);
+					
+					}
+				}while(op != 0); 
+			}
+
+ 	 		
+ 	
